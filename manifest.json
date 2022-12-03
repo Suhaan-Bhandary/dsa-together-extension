@@ -5,5 +5,12 @@
   "browser_action": {
     "default_popup": "./src/popup.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["./src/scripts/authorizeAndSetToken.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "permissions": ["activeTab", "storage"]
 }
